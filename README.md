@@ -1,6 +1,10 @@
 # JayBeta - Todo List React Hook
 Created with :blue_heart: by <a href="https://www.linkedin.com/in/anh-nguyen2/">Anh</a>  
 
+
+View online <a href="https://albertanguyen.github.io/todolist-reacthook.github.io/" target="_blank">here</a>. 
+
+
 ## 📘 Lessons Learned
 * Takehome message: 
 <ol>
