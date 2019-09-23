@@ -17,4 +17,4 @@ The item object has 3 keys: id, text, completed. Completed key is set false by d
 
 <img src="https://github.com/albertanguyen/todolist-reacthook.github.io/blob/master/public/childState.png" width="500" />
 
-After clicking on the checkbox of the first item idexed 0 (see the image), its key <code>completed</code> turned <code>true</code> in the new array returned by <code>handleChange()</code> method within <code>addtodo</code>. This new state is not passed down to <code>&lt;TodoItem&gt;</code> in other words, <code>todoList</code> array is not mapped updated properties down to props.
+After clicking on the checkbox of the first item idexed 0 (see the image), its key <code>completed</code> turned <code>true</code> in the new array returned by <code>handleChange()</code> method within <code>addtodo</code>. This new state is not passed down to <code>&lt;TodoItem&gt;</code> in other words, <code>todoList</code> array is not mapped updated properties down to props BECAUSE <code>todoList</code> state is not updated by <code>setTodoList</code>. WHY?
