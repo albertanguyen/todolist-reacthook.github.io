@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# JayBeta - Todo List React Hook
+Created with :blue_heart: by <a href="https://www.linkedin.com/in/anh-nguyen2/">Anh</a>  
 
-## Available Scripts
+## 📘 Lessons Learned
+* Takehome message: 
+<ol>
+<li>eventHandlers take care of initiating the function via user interaction, there is no need to use useEffect method</li>
+<li>We usually return the new array/object with updated state of items instead of returing one single item in the array/object</li>
+<ol>
 
-In the project directory, you can run:
+## 🤐 Describe any challenges encountered while building the app.
+* Styling does not work after we check the todo checkbox because <code>props.item.completed</code> is updated by <code>handleChange()</code> method within the scope of <code>addtodo</code> child component only. The updated state by <code>handleChange()</code> method is not passed down to grandchild compopent <code>todoitem</code>.
 
-### `npm start`
+<img src="https://github.com/albertanguyen/todolist-reacthook.github.io/blob/master/public/parentState.png" width="500" />
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The item object has 3 keys: id, text, completed. Completed key is set false by default which is its initital state within <code>addtodo</code> child component.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+<img src="https://github.com/albertanguyen/todolist-reacthook.github.io/blob/master/public/childState.png" width="500" />
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+After clicking on the checkbox of the first item idexed 0 (see the image), its key <code>completed</code> turned <code>true</code> in the new array returned by <code>handleChange()</code> method within <code>addtodo</code>. This new state is not passed down to <code>&lt;TodoItem&gt;</code> in other words, <code>todoList</code> array is not mapped updated properties down to props.
