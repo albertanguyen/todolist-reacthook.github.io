@@ -5,7 +5,7 @@ Created with :blue_heart: by <a href="https://www.linkedin.com/in/anh-nguyen2/">
 * Takehome message: 
 <ol>
 <li>eventHandlers take care of initiating the function via user interaction, there is no need to use useEffect method</li>
-<li>We usually return the new array/object with updated state of items instead of returing one single item in the array/object</li>
+<li>We usually return the new array/object with updated state and/or styling of items instead of returning one single item/styling condition in the array/object</li>
 </ol>
 
 ## 🤐 Describe any challenges encountered while building the app.
@@ -34,7 +34,7 @@ Previously, setTodoList takes a function as an argument:
                 };
 </pre>
 
-In order for setTodoList to work, the argument has to be an object, here is the todoList array. You do not need to return todoList when you already uses <code>map</code> method
+In order for setTodoList to work, the argument has to be an object which is the todoList array. You do not need to return todoList when you already uses <code>map</code> method
 
 <pre>
 setTodoList(todoList.map(item => {
@@ -45,3 +45,8 @@ setTodoList(todoList.map(item => {
                         })
                   )};
 </pre>
+
+<img src="https://github.com/albertanguyen/todolist-reacthook.github.io/blob/master/public/stateupdated.png" width="500"/>
+
+<code>setTodoList()</code> now returns updated state for each items (here is 5 items). But the styling still does not work. As in the instruction of Scrimba (Reactjs), the styling must be done in the child component, not the parent. However, since the style depends on the state of <code>todoList</code> object, my solution is to create another key <code>completeStyle</code> which will return styling for the whole list too by using the <code>item.completed</code> condition.
+

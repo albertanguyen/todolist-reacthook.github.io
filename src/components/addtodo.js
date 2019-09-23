@@ -1,5 +1,4 @@
-import React, { useState, useEffect, createRef } from "react";
-// import "../asset/css/addtodo.css";
+import React, { useState, createRef } from "react";
 import TodoItem from "./todoitem";
 import todosData from "../todosData";
 
@@ -20,11 +19,14 @@ function AddTodo() {
                         return item;
                         })
                   )
-      console.log(todoList);
                 };
-    // useEffect(()=> {
-    //   todoList.map(item => handleChange(item.id));
-    // });
+
+    const completeStyle = {
+      fontStyle: "italic",
+      color: "#A0CFC4",
+      textDecoration: "line-through",
+    };
+  
 
     return (
       <div className="container">
@@ -39,6 +41,7 @@ function AddTodo() {
           {todoList.map(item => <TodoItem 
                                     key={item.id}
                                     item={item}
+                                    completeStyle = {item.completed ? completeStyle : null}
                                     handleChange = { () => handleChange(item.id)}
                                   />
             )}
