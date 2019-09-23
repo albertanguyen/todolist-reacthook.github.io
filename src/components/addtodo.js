@@ -13,19 +13,18 @@ function AddTodo() {
     const [todoList, setTodoList ] = useState(todosData);
 
     const handleChange = (id) => {
-      setTodoList(() => { todosData.map(item => {
+      setTodoList(todoList.map(item => {
                           if (item.id === id) {
                             item.completed = !item.completed
                           }
                         return item;
                         })
-                        return todoList;
-                  })
-      // console.log(todoList);
+                  )
+      console.log(todoList);
                 };
-    useEffect(()=> {
-      todoList.map(item => handleChange(item.id))
-    });
+    // useEffect(()=> {
+    //   todoList.map(item => handleChange(item.id));
+    // });
 
     return (
       <div className="container">
